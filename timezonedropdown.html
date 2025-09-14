@@ -11,7 +11,7 @@
         background-color: lavenderblush;
         font-family: Arial, Helvetica, sans-serif;
       }
-      h4 {
+      p {
         font-style: italic;
       }
     </style>
@@ -19,7 +19,7 @@
   </head>
   <body>
     <h3>Timezone Dropdown</h3>
-    <h4>Coded by Adrea Ojukwu</h4>
+    <p>Coded by Adrea Ojukwu</p>
     <br />
     <form>
       <select id="cities">
@@ -41,6 +41,23 @@
       let sydneyTime = moment()
         .tz("Australia/Sydney")
         .format("dddd, MMMM Do, YYYY h:m A");
+
+      function showSelectedCityTime(event) {
+        if (event.target.value.length > 0) {
+          if (event.target.value === "paris") {
+            alert(`It is ${parisTime} in Europe/Paris`);
+          }
+          if (event.target.value === "tokyo") {
+            alert(`It is Saturday, ${japanTime} in Asia/Tokyo.`);
+          }
+          if (event.target.value === "sydney") {
+            alert(`It is Saturday, ${sydneyTime} in Australia/Sydney.`);
+          }
+        }
+      }
+
+      let citiesSelect = document.querySelector("#cities");
+      citiesSelect.addEventListener("change", showSelectedCityTime);
     </script>
   </body>
   <footer></footer>
