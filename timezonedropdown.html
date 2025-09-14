@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
+    <style>
+      body {
+        background-color: lavenderblush;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h4 {
+        font-style: italic;
+      }
+    </style>
+    <title>SheCodes Plus Add-On, Week 2 Homework: Timezone Drop Downe</title>
+  </head>
+  <body>
+    <h3>Timezone Dropdown</h3>
+    <h4>Coded by Adrea Ojukwu</h4>
+    <br />
+    <form>
+      <select id="cities">
+        <option value="">Select A City</option>
+        <option value="paris">🥐 Paris 🇫🇷</option>
+        <option value="tokyo">🍣 Tokyo 🇯🇵</option>
+        <option value="sydney">🥧 Sydney 🇦🇺</option>
+      </select>
+    </form>
+    <br />
+    <br />
+    <script>
+      let parisTime = moment()
+        .tz("Europe/Paris")
+        .format("dddd, MMMM Do, YYYY h:m A");
+      let japanTime = moment()
+        .tz("Asia/Tokyo")
+        .format("dddd, MMMM, YYYY h:m A");
+      let sydneyTime = moment()
+        .tz("Australia/Sydney")
+        .format("dddd, MMMM Do, YYYY h:m A");
+    </script>
+  </body>
+  <footer></footer>
+</html>
